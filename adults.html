@@ -25,6 +25,11 @@
   <link rel="stylesheet" href="css/hexagons.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css" />
   <link rel="stylesheet" href="css/main.css" />
+  <script src="js\vex.combined.min.js"></script>
+  <script>vex.defaultOptions.className = 'vex-theme-os'</script>
+  <link rel="stylesheet" href="css/vex.css" />
+  <link rel="stylesheet" href="css/vex-theme-os.css" />
+  <link rel="stylesheet" href="css/vex-theme-wireframe.css" />
 </head>
 
 <body>
@@ -158,9 +163,7 @@ $('#representative').click(function(){
           const a = document.createElement('a');
           a.href = response.officials[0].urls.toString();
           a.textContent = response.officials[0].urls;
-      // const img = document.createElement('img');
-      //     img.src = document.getElementById(response.officials[0].photoUrl);
-      //     document.body.appendChild(img);
+
 
       const container1 = document.createElement("div");
       container1.appendChild(logo);
@@ -186,37 +189,56 @@ $('#representative').click(function(){
               <article id="main">
                   <br>
                   <header>
-                          <!-- Content -->
-                          <section class="wrapper style3 special container medium">
                               <center>
                               <div class="content">
+
+                                
 
   <h2>Contact Your Representative</h2>
     <p>Input your address to find out who your representative is and how you can contact them!</p>
     <br>
-  <label for="address">Address</label> 
-  <input id="address" type="text"> 
-  <label for="city">City</label> 
-  <input id="city" type="text">
-      <label for="state">State</label> 
-  <input id="state" type="text">
-      <label for="zipcode">Zipcode</label> 
-  <input id="zipcode" type="text">
+
+    <table>
+        <tr>
+          <td><label for="name">Name</label></td>
+          <td><input id="name" type="text"></td>
+        </tr>
+        <tr>
+          <td><label for="address">Address</label></td>
+          <td><input id="address" type="text"></td>
+        </tr>
+        <tr>
+          <td><label for="city">City</label> </td>
+          <td><input id="city" type="text"></td>
+        </tr>
+        <tr>
+          <td><label for="state">State</label></td>
+          <td><input id="state" type="text"></td>
+        </tr>
+        <tr>
+          <td><label for="zipcode">Zipcode</label></td>
+          <td><input id="zipcode" type="text"></td>
+        </tr>
+      </table>
+
   <br>
    <script>
  function showDiv() {
    document.getElementById('welcomeDiv').style.display = "block";
 }
+    vex.defaultOptions.className = 'vex-theme-wireframe';
+    // vex.dialog.defaultOptions.showCloseButton = true;
+    function returnTemplate(){
+        vex.dialog.alert({ unsafeMessage: "<center><h5>Contact your Representative, Mikie Sherrill of NJ-11 District today!</h5><br><h6>Here's a template: </h6></center> <p> Dear Representative Mikie Sherrill, <br><br> As a constituent, I urge you to support the policies and actions, specifically H.R. 2960: Energy and Water Development and Related Agencies Appropriations Act, necessary to address nutrient polution to combat eutrophication. This issue is important because eutrophication destroys ecosystems and bodies of water, ultimately contributing to climate change and global warming. <br><br>Your support for combatting eutrophication is critical because your constituents have benefited from the program. In my community, there are multiple parks, reservations, and streams that are all impacted by nutrient pollution, causes collapses in ecosystems large and small. <br><br> Here are some specific facts to help illustrate my point.  <br><br> Fact 1: According to the Survey of the State of the World’s Lakes, a project promoted by the International Lake Environment Committee, eutrophication affects 54% of Asian lakes, 53% of those in Europe, 48% of those in North America, 41% of those in South America and 28% of those in Africa (www.lescienze.it). <br><br> Fact 2: Now, the traditional eutrophication reduction strategies, including the alteration of excess nutrients, physical mixing of the water, application of powerful herbicides and algaecides, have proven ineffective, expensive and impractical for large ecosystems (Michael F. Chislock, 2013) <br><br> I would like to request a written response on this issue and my contact information is attached to this message. Thank you for your service and consideration. <br><br> Janice Kim <br> Concerned Citizen<br><br><br>37 N Baums Ct<br>Livingston, NJ 07039 </p>" });
+    }
   </script>
-  <input type="button" name="answer" value="Submit" id="representative" onclick="showDiv()" />
+  <input type="button" name="answer" value="Submit" onclick="returnTemplate()" />
   <br>
   </section>
-  <section id="welcomeDiv" style="display:none" class="wrapper style3 special container medium">
-  <div id="results"></div>
   </section>
-  <script type="text/javascript" src="ajax.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </section>
+</div>
 </div>
 </body>
   
@@ -240,6 +262,7 @@ $('#representative').click(function(){
   <script src="js/waypoints.min.js"></script>
   <script src="js/jquery.nice-select.min.js"></script>
   <script src="js/main.js"></script>
+
 </body>
 
 </html>
